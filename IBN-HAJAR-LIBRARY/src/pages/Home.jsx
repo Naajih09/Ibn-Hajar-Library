@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React from "react";
 import BookCard from "../Components/BookCard";
 import books from "../data/books.json";

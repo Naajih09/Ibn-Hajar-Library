@@ -1,4 +1,3 @@
-// src/pages/Book.jsx
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import books from "../data/books.json";
