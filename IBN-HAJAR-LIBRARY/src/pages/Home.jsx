@@ -16,7 +16,6 @@ export default function Home({ searchTerm }) {
       ) : (
         <p>لم يتم العثور على نتائج</p>
       )}
-      <BookCard />
     </div>
   );
 }
