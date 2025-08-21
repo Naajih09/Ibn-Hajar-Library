@@ -9,13 +9,40 @@ export default function Home({ searchTerm }) {
       book.author.includes(searchTerm)
   );
 
+  const paddedBooks = [...filteredBooks];
+  while (paddedBooks.length < 4) {
+    paddedBooks.push({
+      id: `placeholder-${paddedBooks.length}`,
+      title: "قريباً...",
+      author: "",
+      cover: "placeholder.jpg",
+      description: "سيتم إضافة كتاب جديد قريباً.",
+      readLink: "#",
+      downloadLink: "#",
+      isPlaceholder: true
+    });
+  }
+
   return (
-    <div className="p-6 grid md:grid-cols-3 gap-6">
-      {filteredBooks.length > 0 ? (
-        filteredBooks.map((book) => <BookCard key={book.id} book={book} />)
-      ) : (
-        <p>لم يتم العثور على نتائج</p>
-      )}
+    <div className="p-6 overflow-x-auto">
+      <div className="flex gap-4 min-w-max">
+        {paddedBooks.length > 0 ? (
+          paddedBooks.map((book) => (
+            <div className="flex-shrink-0 w-64" key={book.id}>
+              <BookCard
+                title={book.title}
+                description={book.description}
+                imageUrl={book.cover}
+                readLink={book.readLink}
+                downloadLink={book.downloadLink}
+                isPlaceholder={book.isPlaceholder}
+              />
+            </div>
+          ))
+        ) : (
+          <p>لم يتم العثور على نتائج</p>
+        )}
+      </div>
     </div>
   );
 }
