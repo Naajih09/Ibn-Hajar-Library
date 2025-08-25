@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import books from "../data/books.json";
 
 export default function BookDetails() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [previewChapter, setPreviewChapter] = useState(null);
 
   const book = books.find((b) => b.id === parseInt(id));
   if (!book) return <div className="p-6">الكتاب غير موجود</div>;
 
+  const hasParts = book.parts && book.parts.length > 0;
+
   return (
     <div className="p-6 max-w-4xl mx-auto font-[Amiri]">
       
+      {/* Back Link */}
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
         ← العودة إلى المكتبة
       </Link>
 
-      
+      {/* Book Info */}
       <div className="flex flex-col md:flex-row gap-6">
         <img
           src={book.cover}
@@ -29,41 +31,55 @@ export default function BookDetails() {
           <p className="text-gray-700 text-lg mb-4">{book.author}</p>
           <p className="text-gray-800 leading-relaxed">{book.description}</p>
 
-          {/* Download Button */}
-          {book.downloadUrl && (
-            <a
-              href={book.downloadUrl}
-              download
-              className="inline-block mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+          {/* Read Button */}
+          {hasParts && (
+            <Link
+              to={`/read/${book.id}`}
+              className="inline-block mt-4 mr-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
             >
-              تحميل الكتاب الكامل
+              قراءة الكتاب
+            </Link>
+          )}
+
+          {/* Download First Part */}
+          {hasParts && (
+            <a
+              href={book.parts[0]}
+              download
+              className="inline-block mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              تحميل الجزء الأول
             </a>
+          )}
+
+          {/* No PDF Available */}
+          {!hasParts && (
+            <p className="mt-4 text-red-600 font-semibold">لا توجد ملفات PDF متاحة لهذا الكتاب حالياً.</p>
           )}
         </div>
       </div>
 
       {/* Chapters */}
-      <h2 className="text-2xl font-semibold mt-8 text-blue-800">الفصول</h2>
-      <ul className="mt-4 space-y-2">
-        {book.chapters.map((chapter) => (
-          <li key={chapter.id}>
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => navigate(`/read/${book.id}/${chapter.id}`)}
-                className="text-blue-500 hover:underline text-lg"
-              >
-                {chapter.title}
-              </button>
-              <button
-                onClick={() => setPreviewChapter(chapter)}
-                className="text-sm text-gray-600 hover:text-gray-800"
-              >
-                معاينة
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {book.chapters && book.chapters.length > 0 && (
+        <>
+          <h2 className="text-2xl font-semibold mt-8 text-blue-800">الفصول</h2>
+          <ul className="mt-4 space-y-2">
+            {book.chapters.map((chapter) => (
+              <li key={chapter.id}>
+                <div className="flex items-center gap-4">
+                  <span className="text-blue-500 text-lg">{chapter.title}</span>
+                  <button
+                    onClick={() => setPreviewChapter(chapter)}
+                    className="text-sm text-gray-600 hover:text-gray-800"
+                  >
+                    معاينة
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
       {/* Modal Preview */}
       {previewChapter && (
