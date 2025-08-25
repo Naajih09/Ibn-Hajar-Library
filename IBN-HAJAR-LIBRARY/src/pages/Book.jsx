@@ -30,12 +30,12 @@ export default function Book() {
 
   return (
     <div className="p-6 animate-fade-in">
-      {/* Breadcrumb */}
+      
       <nav className="text-sm text-gray-500 mb-4">
         <Link to="/" className="hover:underline">الرئيسية</Link> / <span>{book.title}</span>
       </nav>
 
-      {/* Book Info */}
+      
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-3xl font-bold text-blue-900">{book.title}</h1>
         <button
@@ -51,7 +51,7 @@ export default function Book() {
       <p className="text-gray-700">{book.author}</p>
       <p className="mt-4 text-sm text-gray-600">{book.description}</p>
 
-      {/* Chapters */}
+      
       <h2 className="text-xl mt-6 font-bold text-blue-800">الفصول:</h2>
       {book.chapters.length > 0 ? (
         <ul className="list-disc pr-6 mt-2">

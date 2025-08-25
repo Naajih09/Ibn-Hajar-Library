@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Home from './pages/Home';
 import Book from './pages/Book';
 import ChapterPage from './Pages/ChapterPage';
-import MainLayout from './Components/MainLayout'; 
+import About from './pages/About';
+import MainLayout from './Components/MainLayout';
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<Home searchTerm={searchTerm} />} />
         <Route path="/book/:id" element={<Book />} />
         <Route path="/books/:bookId/chapters/:chapterId" element={<ChapterPage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </MainLayout>
   );

@@ -12,12 +12,12 @@ export default function BookDetails() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto font-[Amiri]">
-      {/* Back to Library */}
+      
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
         ← العودة إلى المكتبة
       </Link>
 
-      {/* Book Info */}
+      
       <div className="flex flex-col md:flex-row gap-6">
         <img
           src={book.cover}

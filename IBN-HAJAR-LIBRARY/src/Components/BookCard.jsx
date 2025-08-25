@@ -24,7 +24,7 @@ export default function BookCard({
           rel="noopener noreferrer"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
-          📖 اقرأ
+           اقرأ
         </a>
         <a
           href={downloadLink}
@@ -32,7 +32,7 @@ export default function BookCard({
           rel="noopener noreferrer"
           className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
         >
-          📥 تحميل
+           تحميل
         </a>
       </div>
     </div>

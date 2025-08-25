@@ -15,7 +15,7 @@ export default function Home({ searchTerm }) {
       id: `placeholder-${paddedBooks.length}`,
       title: "قريباً...",
       author: "",
-      cover: "placeholder.jpg",
+      cover: "#",
       description: "سيتم إضافة كتاب جديد قريباً.",
       readLink: "#",
       downloadLink: "#",
