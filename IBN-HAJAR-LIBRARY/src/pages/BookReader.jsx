@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import books from "../data/books.json";
 
 export default function BookReader() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const book = books.find((b) => b.id === parseInt(id));
   const [selectedPartIndex, setSelectedPartIndex] = useState(0);
 
@@ -13,6 +14,14 @@ export default function BookReader() {
 
   return (
     <div className="p-6 max-w-5xl mx-auto font-[Amiri] space-y-6">
+      {/* Back Button */}
+      <button
+        onClick={() => navigate(-1)}
+        className="mb-4 bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition"
+      >
+        ← رجوع
+      </button>
+
       <h1 className="text-2xl font-bold text-blue-900 mb-4">{book.title}</h1>
 
       {/* Dropdown to select part */}

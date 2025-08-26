@@ -11,9 +11,18 @@ export default function BookDetails() {
 
   const hasParts = book.parts && book.parts.length > 0;
 
+  // ✅ Handle file download (works for external PDFs too)
+  const handleDownload = (url, filename = "book.pdf") => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="p-6 max-w-4xl mx-auto font-[Amiri]">
-      
       {/* Back Link */}
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
         ← العودة إلى المكتبة
@@ -31,31 +40,33 @@ export default function BookDetails() {
           <p className="text-gray-700 text-lg mb-4">{book.author}</p>
           <p className="text-gray-800 leading-relaxed">{book.description}</p>
 
-          {/* Read Button */}
-          {hasParts && (
-            <Link
-              to={`/read/${book.id}`}
-              className="inline-block mt-4 mr-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              قراءة الكتاب
-            </Link>
-          )}
+          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-3 mt-4">
+            {hasParts && (
+              <>
+                {/* ✅ Make sure you have a <Route path="/read/:id" element={<Reader />} /> */}
+                <Link
+                  to={`/read/${book.id}`}
+                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                >
+                  اقرأ
+                </Link>
 
-          {/* Download First Part */}
-          {hasParts && (
-            <a
-              href={book.parts[0]}
-              download
-              className="inline-block mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-            >
-              تحميل الجزء الأول
-            </a>
-          )}
-
-          {/* No PDF Available */}
-          {!hasParts && (
-            <p className="mt-4 text-red-600 font-semibold">لا توجد ملفات PDF متاحة لهذا الكتاب حالياً.</p>
-          )}
+                {/* ✅ Use JS function for external download */}
+                <button
+                  onClick={() => handleDownload(book.parts[0], `${book.title}.pdf`)}
+                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                >
+                  تحميل
+                </button>
+              </>
+            )}
+            {!hasParts && (
+              <p className="text-red-600 font-semibold">
+                لا توجد ملفات PDF متاحة لهذا الكتاب حالياً.
+              </p>
+            )}
+          </div>
         </div>
       </div>
 

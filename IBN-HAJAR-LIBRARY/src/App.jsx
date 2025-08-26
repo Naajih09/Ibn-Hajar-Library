@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './pages/Home';
 import Book from './pages/Book';
-import ChapterPage from './Pages/ChapterPage';
+import ChapterPage from './Pages/ChaPterPage';
 import About from './pages/About';
 import MainLayout from './Components/MainLayout';
 import BookReader from './pages/BookReader';
@@ -18,6 +18,7 @@ export default function App() {
         <Route path="/books/:bookId/chapters/:chapterId" element={<ChapterPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/read/:id" element={<BookReader />} />
+
       </Routes>
     </MainLayout>
   );
