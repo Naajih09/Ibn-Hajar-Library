@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './pages/Home';
-import ChapterPage from './Pages/ChapterPage';
+import ChapterPage from './pages/ChapterPage'
 import About from './pages/About';
 import MainLayout from './Components/MainLayout';
 import BookReader from './pages/BookReader';
