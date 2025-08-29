@@ -38,14 +38,6 @@ export default function Book() {
       
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-3xl font-bold text-blue-900">{book.title}</h1>
-        <button
-          onClick={() => setIsFavorite(!isFavorite)}
-          className={`px-3 py-1 rounded text-sm transition ${
-            isFavorite ? "bg-yellow-400 text-white" : "bg-gray-200 text-gray-700"
-          }`}
-        >
-          {isFavorite ? "★ مفضل" : "☆ أضف للمفضلة"}
-        </button>
       </div>
 
       <p className="text-gray-700">{book.author}</p>

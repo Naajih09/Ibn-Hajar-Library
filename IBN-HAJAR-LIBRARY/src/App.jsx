@@ -13,7 +13,7 @@ export default function App() {
     <MainLayout searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
       <Routes>
         <Route path="/" element={<Home searchTerm={searchTerm} />} />
-        <Route path="/read/:id" element={<BookReader />} />
+        <Route path="/reader/:id" element={<BookReader />} />
         <Route path="/books/:bookId/chapters/:chapterId" element={<ChapterPage />} />
         <Route path="/about" element={<About />} />
       </Routes>

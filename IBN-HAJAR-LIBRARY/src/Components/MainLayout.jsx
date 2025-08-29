@@ -18,8 +18,8 @@ export default function MainLayout({ children, searchTerm, setSearchTerm }) {
         />
 
         <nav className="mt-2 md:mt-0">
-          <Link to="/" className="mr-4 hover:underline">الرئيسية</Link>
-          <Link to="/about" className="hover:underline">عن المكتبة</Link>
+          <Link to="/" className="mr-4 hover:underline px-4 font-semibold">الرئيسية</Link>
+          <Link to="/about" className="hover:underline px-4 font-semibold">عن المكتبة</Link>
         </nav>
       </header>
 

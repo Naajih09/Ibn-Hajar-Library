@@ -1,16 +1,16 @@
-# 📚 مكتبة ابن حجر — _Ibn Hajar Library_
+# مكتبة ابن حجر — _Ibn Hajar Library_
 
 A free Arabic digital library built with **React**, **Vite**, and **Tailwind CSS**, designed to make classical Islamic books accessible to everyone. The library features works by **Imam Ibn Hajar** and includes an original text by my **Shaykh**, presented with elegant design and intuitive navigation.
 
-> ⚠️ This project is currently under development. Expect ongoing updates and improvements.
+> This project is currently under development. Expect ongoing updates and improvements.
 
-## 🎓 Capstone Project — ALX Software Engineering Program
+## Capstone Project — ALX Software Engineering Program
 
 This project is my official Capstone submission for the **ALX Software Engineering Program**. It represents the culmination of months of learning, building, and problem-solving across front-end development, version control, and UI/UX design.
 
 The Ibn-Hajar Library is more than just a technical exercise — it’s a personal and cultural contribution to digital Islamic scholarship, built with modern web technologies and a deep sense of purpose.
 
-## 🚀 Setup
+## Setup
 
 This project uses:
 
@@ -43,14 +43,14 @@ IBN-HAJAR-LIBRARY/
 ├── public/
 │   ├── Books/               # PDF files
 │   ├── covers/              # Book cover images
-│   └── vite.svg             # Vite logo
+│
 ├── src/
 │   ├── Components/          # Reusable UI components
 │   │   ├── BookCard.jsx
 │   │   ├── BookDetail.jsx
 │   │   ├── MainLayout.jsx
 │   │   ├── Navbar.jsx
-│   │   └── SearchResults.jsx
+│   │
 │   ├── assets/              # Icons and static assets
 │   │   └── react.svg
 │   ├── data/                # Book data

@@ -11,7 +11,7 @@ export default function BookDetails() {
 
   const hasParts = book.parts && book.parts.length > 0;
 
-  // ✅ Handle file download (works for external PDFs too)
+  
   const handleDownload = (url, filename = "book.pdf") => {
     const link = document.createElement("a");
     link.href = url;
@@ -23,12 +23,12 @@ export default function BookDetails() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto font-[Amiri]">
-      {/* Back Link */}
+      
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
         ← العودة إلى المكتبة
       </Link>
 
-      {/* Book Info */}
+      
       <div className="flex flex-col md:flex-row gap-6">
         <img
           src={book.cover}
@@ -40,11 +40,10 @@ export default function BookDetails() {
           <p className="text-gray-700 text-lg mb-4">{book.author}</p>
           <p className="text-gray-800 leading-relaxed">{book.description}</p>
 
-          {/* Action Buttons */}
+         
           <div className="flex flex-wrap gap-3 mt-4">
             {hasParts && (
               <>
-                {/* ✅ Make sure you have a <Route path="/read/:id" element={<Reader />} /> */}
                 <Link
                   to={`/read/${book.id}`}
                   className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
@@ -52,7 +51,6 @@ export default function BookDetails() {
                   اقرأ
                 </Link>
 
-                {/* ✅ Use JS function for external download */}
                 <button
                   onClick={() => handleDownload(book.parts[0], `${book.title}.pdf`)}
                   className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
@@ -70,7 +68,7 @@ export default function BookDetails() {
         </div>
       </div>
 
-      {/* Chapters */}
+      
       {book.chapters && book.chapters.length > 0 && (
         <>
           <h2 className="text-2xl font-semibold mt-8 text-blue-800">الفصول</h2>
@@ -92,7 +90,7 @@ export default function BookDetails() {
         </>
       )}
 
-      {/* Modal Preview */}
+      
       {previewChapter && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded shadow-lg max-w-md w-full">

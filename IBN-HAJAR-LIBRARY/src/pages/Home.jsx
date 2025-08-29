@@ -30,11 +30,11 @@ export default function Home({ searchTerm }) {
           paddedBooks.map((book) => (
             <div className="flex-shrink-0 w-64" key={book.id}>
               <BookCard
+                id={book.id} 
                 title={book.title}
                 description={book.description}
                 imageUrl={book.cover}
-                // ✅ FIX: Generate read link dynamically from id
-                readLink={book.isPlaceholder ? "#" : `/read/${book.id}`}
+                readLink={book.isPlaceholder ? "#" : `/reader/${book.id}`} 
                 downloadLink={book.downloadLink}
                 isPlaceholder={book.isPlaceholder}
               />
