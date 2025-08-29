@@ -33,7 +33,8 @@ export default function Home({ searchTerm }) {
                 title={book.title}
                 description={book.description}
                 imageUrl={book.cover}
-                readLink={book.readLink}
+                // ✅ FIX: Generate read link dynamically from id
+                readLink={book.isPlaceholder ? "#" : `/read/${book.id}`}
                 downloadLink={book.downloadLink}
                 isPlaceholder={book.isPlaceholder}
               />

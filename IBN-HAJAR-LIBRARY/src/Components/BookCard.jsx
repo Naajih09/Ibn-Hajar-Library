@@ -26,7 +26,7 @@ export default function BookCard({
       <div className="flex flex-wrap gap-3">
         {/* ✅ Fixed: Navigate to /reader/:id */}
         <button
-          onClick={() => navigate(`/reader/${id}`)}
+          onClick={() => navigate(`/read/${id}`)}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
           اقرأ

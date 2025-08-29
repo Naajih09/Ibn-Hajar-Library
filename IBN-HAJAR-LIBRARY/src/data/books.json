@@ -7,10 +7,26 @@
     "description": "شرح الإمام الحافظ ابن حجر العسقلاني على صحيح البخاري، ويُعَدّ من أعظم شروح الحديث في التاريخ الإسلامي.",
     "category": "شرح الحديث",
     "parts": [
+      "/Books/Fathu-lbari/Cover.pdf",
       "/Books/Fathu-lbari/part1.pdf",
       "/Books/Fathu-lbari/part2.pdf",
       "/Books/Fathu-lbari/part3.pdf",
-      "/Books/Fathu-lbari/part4.pdf"
+      "/Books/Fathu-lbari/part4.pdf",
+      "/Books/Fathu-lbari/part5.pdf",
+      "/Books/Fathu-lbari/part6.pdf",
+      "/Books/Fathu-lbari/part7.pdf",
+      "/Books/Fathu-lbari/part8.pdf",
+      "/Books/Fathu-lbari/part9.pdf",
+      "/Books/Fathu-lbari/part10.pdf",
+      "/Books/Fathu-lbari/part11.pdf",
+      "/Books/Fathu-lbari/part12.pdf",
+      "/Books/Fathu-lbari/part13.pdf",
+      "/Books/Fathu-lbari/part14.pdf",
+      "/Books/Fathu-lbari/part15.pdf",
+      "/Books/Fathu-lbari/part16.pdf",
+      "/Books/Fathu-lbari/part17.pdf",
+      "/Books/Fathu-lbari/part18.pdf",
+      "/Books/Fathu-lbari/part19.pdf"
     ],
     "chapters": [
       {
@@ -41,8 +57,7 @@
     "description": "مختصر لكتاب تهذيب التهذيب، جمع فيه ابن حجر خلاصة أحكامه على رواة الحديث في صيغة موجزة.",
     "category": "الجرح والتعديل",
     "parts": [
-      "/Books/Taqrib/part1.pdf",
-      "/Books/Taqrib/part2.pdf"
+      "/Books/Taqrib/part1.pdf"
     ],
     "chapters": [
       {
@@ -67,9 +82,8 @@
     "description": "أشهر معاجم تراجم الصحابة، رتبه ابن حجر على حروف المعجم، وذكر فيه أسماء الصحابة وأخبارهم.",
     "category": "تراجم الصحابة",
     "parts": [
-      "/Books/Alisabah/part1.pdf",
-      "/Books/Alisabah/part2.pdf",
-      "/Books/Alisabah/part3.pdf"
+      "/Books/Al-isaba/part1.pdf",
+      "/Books/Al-isaba/part2.pdf"
     ],
     "chapters": [
       {

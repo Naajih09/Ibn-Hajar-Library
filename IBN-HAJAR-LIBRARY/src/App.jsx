@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './pages/Home';
-import Book from './pages/Book';
 import ChapterPage from './Pages/ChaPterPage';
 import About from './pages/About';
 import MainLayout from './Components/MainLayout';
@@ -14,11 +13,9 @@ export default function App() {
     <MainLayout searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
       <Routes>
         <Route path="/" element={<Home searchTerm={searchTerm} />} />
-        <Route path="/book/:id" element={<Book />} />
+        <Route path="/read/:id" element={<BookReader />} />
         <Route path="/books/:bookId/chapters/:chapterId" element={<ChapterPage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/read/:id" element={<BookReader />} />
-
       </Routes>
     </MainLayout>
   );
